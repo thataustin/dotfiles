@@ -1,0 +1,1 @@
+$_Z_NO_RESOLVE_SYMLINKS=true
