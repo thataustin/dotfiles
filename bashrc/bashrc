@@ -4,6 +4,20 @@
   alias la='ls -A'
   alias l='ls -CF'
 
+  # Enable color support of ls and also add handy aliases
+  if [ -x /usr/bin/dircolors ]; then
+      eval "`dircolors -b`"
+      alias ls='ls --color=auto'
+      alias dir='dir --color=auto'
+      alias vdir='vdir --color=auto'
+      alias sls="screen -ls "
+      alias sx="screen -x "
+
+      alias grep='grep --color=auto'
+      alias fgrep='fgrep --color=auto'
+      alias egrep='egrep --color=auto'
+  fi
+
 # EXPORTS
   export PATH=$PATH:/usr/local/mysql/bin/
   export PATH=$PATH:/usr/local/git/bin/
@@ -11,6 +25,11 @@
   export RUBYOPT=rubygems
   export PATH="/usr/local/heroku/bin:$PATH"
   export PATH="~/.rvm/bin:$PATH" # Add RVM to PATH for scripting
+  export HISTCONTROL=ignoreboth
+
+# Setting PATH for Python 3.3
+# The orginal version is saved in .bash_profile.pysave
+  export PATH="/Library/Frameworks/Python.framework/Versions/3.3/bin:${PATH}"
 
 # Load RVM into a shell session *as a function*
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
@@ -24,3 +43,7 @@
   alias sls="screen -ls"
   alias sx="screen -x"
   alias ta="tmux attach"
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
