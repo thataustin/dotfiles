@@ -13,7 +13,11 @@ task :default do |t|
         rake
     `
 
-    File.new("/Users/austinbrown/.profile", 'a').puts('source ~/.dotfiles/bashrc').puts('source ~/.dotfiles/z.sh')
+    file = File.new("/Users/austinbrown/.profile", 'a')
+    file.puts('# The following are from my dotfiles repo installation')
+    file.puts('source ~/.dotfiles/bashrc')
+    file.puts('source ~/.dotfiles/z.sh')
+    file.puts('source ~/.dotfiles/profile')
 
     puts "Now you need to open up your iterm profiles and make Solarized the default :)"
 end
