@@ -13,9 +13,7 @@ task :default do |t|
         rake
     `
 
-    ["{#dest}.profile"].each do |file_name|
-      File.new(file_name, APPEND).puts('for f in ~/.bash_profile_*; do source $f; done') if File.exists?(file_name)
-    end
+    File.new("/Users/austinbrown/.profile", APPEND).puts('source ~/.dotfiles/bashrc')
 
     puts "Now you need to open up your iterm profiles and make Solarized the default :)"
 end
