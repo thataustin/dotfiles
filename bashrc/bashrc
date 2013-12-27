@@ -35,8 +35,8 @@
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # Personal Bash Prefs
-  alias pro="vim -O ~/.profile ~/.dotfiles/.bashrc; src"
-  alias src="source ~/.profile ~/.dotfiles/.bashrc;"
+  alias pro="vim -O ~/.profile ~/.dotfiles/bashrc; ~/.dotfiles/profile; src"
+  alias src="source ~/.profile ~/.dotfiles/bashrc; ~/.dotfiles/profile;"
 
   alias whoson="users  | sed 's/ /\n/g' | uniq -c | sort -n"
   alias wtf="echo 'Its okay, I, the computer, amd just messing with you, go take a break'"
