@@ -1,8 +1,18 @@
 # This is where I keep my personal commands for this computer
+  alias codemode="~/.pyenv/versions/2.7.6/bin/codemod.py"
   alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Resources/jsc"
   alias ll='ls -l'
   alias la='ls -A'
   alias l='ls -CF'
+  alias l='ls -CF'
+  alias pro="vim -O ~/.profile ~/.dotfiles/bashrc; ~/.dotfiles/profile; src"
+  alias src="source ~/.profile ~/.dotfiles/bashrc; ~/.dotfiles/profile;"
+  alias whoson="users  | sed 's/ /\n/g' | uniq -c | sort -n"
+  alias wtf="echo 'Its okay, I, the computer, amd just messing with you, go take a break'"
+  alias sls="screen -ls"
+  alias sx="screen -x"
+  alias ta="tmux attach"
+  alias dotfiles="cd ~/.dotfiles"
 
   # Enable color support of ls and also add handy aliases
   if [ -x /usr/bin/dircolors ]; then
@@ -24,26 +34,16 @@
   export PATH=/usr/local/bin/:$PATH
   export RUBYOPT=rubygems
   export PATH="/usr/local/heroku/bin:$PATH"
-  export PATH="~/.rvm/bin:$PATH" # Add RVM to PATH for scripting
   export HISTCONTROL=ignoreboth
 
 # Setting PATH for Python 3.3
 # The orginal version is saved in .bash_profile.pysave
   export PATH="/Library/Frameworks/Python.framework/Versions/3.3/bin:${PATH}"
 
-# Load RVM into a shell session *as a function*
-  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # Personal Bash Prefs
-  alias pro="vim -O ~/.profile ~/.dotfiles/bashrc; ~/.dotfiles/profile; src"
-  alias src="source ~/.profile ~/.dotfiles/bashrc; ~/.dotfiles/profile;"
-
-  alias whoson="users  | sed 's/ /\n/g' | uniq -c | sort -n"
-  alias wtf="echo 'Its okay, I, the computer, amd just messing with you, go take a break'"
-  alias sls="screen -ls"
-  alias sx="screen -x"
-  alias ta="tmux attach"
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
+
+eval "$(pyenv init -)"
