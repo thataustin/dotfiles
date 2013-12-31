@@ -42,3 +42,5 @@ function proml {
   PS4='+ '
 }
 proml
+
+new_article () { vim `date "+%Y-%m-%d"-`$1; }
