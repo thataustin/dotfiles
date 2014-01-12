@@ -1,7 +1,7 @@
 require 'fileutils'
 
 task :default do |t| 
-    dest = "/Users/austinbrown/.dotfiles"
+    dest = "~/.dotfiles"
     FileUtils.mkdir_p(dest) unless File.exists?(dest)
     dest += "/"
     FileUtils.cp_r(File.dirname(__FILE__) + "/bashrc/.", dest)
